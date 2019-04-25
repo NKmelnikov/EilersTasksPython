@@ -1,8 +1,20 @@
+import itertools
+
+
 def find_simple(number):
-    for i in range(1, number+1):
+    list1 = []
+    for i in range(2, number):
         if number % i == 0:
-            continue
-        print(i)
+            if simple(i):
+                list1.append(i)
+    print(list1)
 
 
-find_simple(10)
+def simple(number):
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+
+find_simple(600851475143)
