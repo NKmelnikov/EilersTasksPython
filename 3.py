@@ -1,20 +1,17 @@
-import itertools
+import math
 
 
-def find_simple(number):
-    list1 = []
-    for i in range(2, number):
-        if number % i == 0:
-            if simple(i):
-                list1.append(i)
-    print(list1)
+def issimple(a):
+    r = math.ceil(math.sqrt(a))
+    lst = []
+    for i in range(3, r):
+        if a % i == 0:
+            if issimple(i) == []:
+                lst.append(i)
+    return lst
 
 
-def simple(number):
-    for i in range(2, number):
-        if number % i == 0:
-            return False
-    return True
+r = issimple(600851475143)
+print(max(r))
 
-
-find_simple(600851475143)
+#answer = 6857
